@@ -9,7 +9,7 @@ before_install:
   - sudo apt-get update -qq
 
 install:
-  - sudo apt-get -y install qt59base qt59declarative libappimage
+  - sudo apt-get -y install --allow-unauthenticated qt59base qt59declarative libappimage
   - source /opt/qt*/bin/qt*-env.sh
   - # Precompiled KF5
   - wget -c "https://github.com/chigraph/precompiled-kf5-linux/releases/download/precompiled/kf5-gcc6-linux64-release.tar.xz"
