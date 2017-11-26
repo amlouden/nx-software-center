@@ -4,11 +4,12 @@ sudo: require
 dist: trusty
 
 before_install:
+  - echo "deb http://repo.nxos.org/ nxos main" | sudo tee /etc/apt/sources.list.d/nxos.list
   - sudo add-apt-repository ppa:beineri/opt-qt593-trusty -y
   - sudo apt-get update -qq
 
 install:
-  - sudo apt-get -y install qt59base qt59declarative
+  - sudo apt-get -y install qt59base qt59declarative libappimage
   - source /opt/qt*/bin/qt*-env.sh
   - # Precompiled KF5
   - wget -c "https://github.com/chigraph/precompiled-kf5-linux/releases/download/precompiled/kf5-gcc6-linux64-release.tar.xz"
